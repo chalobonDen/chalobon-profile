@@ -8,7 +8,7 @@ import resourcesToBackend from 'i18next-resources-to-backend'
 import { I18nextProvider as Provider, initReactI18next } from 'react-i18next'
 
 import { getOptions } from './settings'
-import type { Language } from '@/enums/language'
+import { Language } from '@/enums/language'
 
 // eslint-disable-next-line import/no-named-as-default-member
 i18next
@@ -17,7 +17,7 @@ i18next
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   .use(resourcesToBackend((language: Language, namespace: string) => import(`./translations/${language}.json`)))
   .init({
-    ...getOptions(),
+    ...getOptions(Language.EN, undefined),
     detection: {
       caches: ['cookie'],
     },
