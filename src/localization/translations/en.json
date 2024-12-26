@@ -1,0 +1,13 @@
+{
+  "home": "Home",
+  "education": "Education",
+  "experience": "Experience",
+  "skill": "Skill",
+  "resume": "Resume",
+
+  "education-page": {
+    "major": "Modern Management and Information Technology",
+    "faculty": "College of Art, Media and Technology",
+    "university": "Chiang Mai University"
+  }
+}
