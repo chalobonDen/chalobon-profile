@@ -9,6 +9,7 @@ import { IoLogoVue } from 'react-icons/io5'
 import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri'
 import { SiNuxtdotjs } from 'react-icons/si'
 
+import ContactForm from '@/components/HomeSection/ContactForm'
 import Education from '@/components/HomeSection/Education'
 import Experience from '@/components/HomeSection/Experience'
 import type { IExperience } from '@/interfaces/modules/experience'
@@ -113,6 +114,10 @@ export default function Home() {
 
       <div id="experience">
         <Experience data={workExperience as IExperience[]} />
+      </div>
+
+      <div id="experience">
+        <ContactForm />
       </div>
 
       <div className={cn('flex h-80 flex-col items-center justify-center space-y-4 bg-primary')}>
