@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { BiLogoTypescript, BiLogoJavascript, BiPhone } from 'react-icons/bi'
 import { FaGithub, FaGitlab, FaReact } from 'react-icons/fa6'
@@ -79,10 +80,14 @@ export default function Home() {
                 'absolute -left-5 top-0',
               )}
             />
-            <img
-              className={cn('mt-6 rounded-full object-cover square-48 md:mt-0 md:square-64')}
-              src="/images/my-profile-1.JPG"
+            <Image
+              src="/images/my-profile-3.JPG"
               alt="profile"
+              priority
+              width={800}
+              height={800}
+              quality={100}
+              className={cn('mt-6 rounded-full object-cover square-48 md:mt-0 md:square-64')}
             />
             <div
               className={cn(
