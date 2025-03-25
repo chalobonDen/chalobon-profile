@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { dir } from 'i18next'
 import { Prompt } from 'next/font/google'
 
-import './globals.css'
+import '@/styles/globals.scss'
 
 import Providers from './providers'
 import Navbar from '@/components/Layout/Navbar'
