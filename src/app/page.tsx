@@ -13,7 +13,10 @@ import { SiNuxtdotjs } from 'react-icons/si'
 import ContactForm from '@/components/HomeSection/ContactForm'
 import Education from '@/components/HomeSection/Education'
 import Experience from '@/components/HomeSection/Experience'
+import Portfolio from '@/components/HomeSection/Portfolio'
+import { portfoliosData } from '@/constants/demo/portfolio'
 import type { IExperience } from '@/interfaces/modules/experience'
+import type { IPortfolio } from '@/interfaces/modules/portfolio'
 import workExperience from '@/jsons/experience.json'
 import { cn } from '@/lib/utils'
 
@@ -115,6 +118,10 @@ export default function Home() {
 
       <div id="education">
         <Education />
+      </div>
+
+      <div id="portfolio">
+        <Portfolio data={portfoliosData as IPortfolio[]} />
       </div>
 
       <div id="experience">

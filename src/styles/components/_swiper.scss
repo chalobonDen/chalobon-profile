@@ -1,0 +1,30 @@
+.swiper {
+  --swiper-theme-color: theme("colors.white");
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+
+  // ย้าย bullet ซ้ายสุด
+  .swiper-pagination {
+    @apply left-0 right-auto w-auto flex justify-start pl-2 pb-2;
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply w-8 rounded-md;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    @apply rounded-full bg-primary bg-center bg-no-repeat text-white shadow-md square-6;
+  }
+}
+
+// custom icon
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: "" !important;
+}
+
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after {
+  content: "" !important;
+}
