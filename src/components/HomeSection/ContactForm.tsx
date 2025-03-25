@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import emailjs from '@emailjs/browser'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 import { Button } from '@/components/Base/Button'
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/Base/Form'
@@ -16,6 +17,8 @@ type FormValues = {
 }
 
 export default function ContactForm() {
+  const { t } = useTranslation()
+
   const form = useForm<FormValues>({
     defaultValues: {
       name: '',
@@ -52,18 +55,18 @@ export default function ContactForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="mx-10 max-w-md space-y-6 rounded-md bg-white p-6 shadow-md"
+            className={cn('mx-10 w-full max-w-xl space-y-6 rounded-md bg-white p-6 shadow-md')}
           >
-            <h1 className={cn('text-2xl font-bold text-primary md:text-3xl lg:text-4xl')}>Send me a message</h1>
+            <h1 className={cn('text-2xl font-bold text-primary md:text-3xl lg:text-4xl')}>{t('contact.title')}</h1>
 
             <FormField
               name="name"
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{t('contact.name')}</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="Your Name" required />
+                    <Input {...field} placeholder={t('contact.yourName')} required />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -75,9 +78,9 @@ export default function ContactForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t('contact.email')}</FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="Your Email" type="email" required />
+                    <Input {...field} placeholder={t('contact.yourEmail')} type="email" required />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -89,9 +92,9 @@ export default function ContactForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel>{t('contact.message')}</FormLabel>
                   <FormControl>
-                    <Textarea {...field} placeholder="Your Message" rows={4} required />
+                    <Textarea {...field} placeholder={t('contact.yourMessage')} rows={4} required />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -99,11 +102,11 @@ export default function ContactForm() {
             />
 
             <Button variant="primary" type="submit" disabled={status === 'sending'} className="w-full">
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
+              {status === 'sending' ? t('contact.sending') : t('contact.send')}
             </Button>
 
-            {status === 'success' && <p className="text-center text-green-600">Message sent successfully!</p>}
-            {status === 'error' && <p className="text-center text-red-600">Something went wrong. Please try again.</p>}
+            {status === 'success' && <p className="text-center text-green-600">{t('contact.sent')}</p>}
+            {status === 'error' && <p className="text-center text-red-600">{t('contact.error')}</p>}
           </form>
         </Form>
       </div>

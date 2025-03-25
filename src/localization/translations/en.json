@@ -5,10 +5,22 @@
   "skill": "Skill",
   "resume": "Resume",
   "portfolio": "Portfolio",
-
   "education-page": {
     "major": "Modern Management and Information Technology",
     "faculty": "College of Art, Media and Technology",
     "university": "Chiang Mai University"
+  },
+  "contact": {
+    "title": "Send me a message",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "yourMessage": "Your Message",
+    "sending": "Sending...",
+    "sent": "Message sent successfully!",
+    "error": "Something went wrong. Please try again."
   }
 }
