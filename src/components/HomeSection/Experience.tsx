@@ -30,7 +30,7 @@ const Experience: FC<IExperienceProps> = ({ data }) => {
                 whileTap={{ scale: 0.95 }}
                 className={cn(
                   'rounded-lg bg-primary/10 p-8 shadow-lg backdrop-blur-lg',
-                  'max-w-lg text-center md:text-left',
+                  'h-full max-w-lg text-center md:text-left',
                 )}
               >
                 <h1 className={cn('text-xl font-bold text-primary')}>{work.name}</h1>
